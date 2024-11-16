@@ -7,6 +7,7 @@ const Register = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState({});
+    const [acceptedTerms, setAcceptedTerms] = useState(false);
 
     const handleSubmit = (e) => {
 
@@ -16,6 +17,11 @@ const Register = () => {
 
         if (name.length < 5) {
             setError({ ...error, name: "must be more the 5 character long" });
+            return;
+        }
+
+        if (!acceptedTerms) {
+            setError({ ...error, terms: "You must accept the terms and conditions" });
             return;
         }
 
@@ -113,8 +119,20 @@ const Register = () => {
                             className="input input-bordered"
                             required />
 
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                        
+                    </div>
+
+                    <div className="form-control flex items-center mt-4">
+                        <label className="label cursor-pointer">
+                            <input
+                                type="checkbox"
+                                className="checkbox checkbox-neutral"
+                                checked={acceptedTerms}
+                                onChange={(e) => setAcceptedTerms(e.target.checked)}
+                            />
+                            <span className="label-text ml-2">
+                                I accept the <Link className="text-blue-800 underline" to="/terms">Terms and Conditions</Link>
+                            </span>
                         </label>
                     </div>
 
