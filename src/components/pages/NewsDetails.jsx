@@ -19,7 +19,20 @@ const NewsDetails = () => {
 
             <main className="w-11/12 mx-auto grid grid-cols-12 gap-5 ">
                 <section className="col-span-9 space-y-12">
-                    <h2 className="font-semibold mb-3 text-2xl">Dragon News</h2>
+
+                    <div className="flex align-items gap-4">
+
+                        <Link
+                            to={`/category/${news?.category_id}`}
+                            className="btn btn-neutral text-white rounded-full">
+                            <FaArrowLeft />
+                            
+                        </Link>
+                        
+                        <h2 className="font-semibold mb-3 text-3xl">Dragon News</h2>
+
+                    </div>
+
                     <div className="border-2 rounded-lg">
                         <div className="card bg-base-100">
                             <figure className="px-10 pt-10">

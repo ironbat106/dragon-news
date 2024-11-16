@@ -6,6 +6,8 @@ import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
 import NewsDetails from "../components/pages/NewsDetails";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../components/pages/ErrorPage";
+import Career from "../components/pages/Career";
 
 const router = createBrowserRouter([
     {
@@ -48,8 +50,12 @@ const router = createBrowserRouter([
         ],
     },
     {
+        path: "/career",
+        element: <Career></Career>,
+    },
+    {
         path: "*",
-        element: <h1>Error</h1>,
+        element: <ErrorPage></ErrorPage>,
     }
 ])
 
