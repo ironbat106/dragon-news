@@ -4,6 +4,7 @@ import LatestNews from "../components/LatestNews";
 import LeftNavbar from "../components/layout-component/LeftNavbar";
 import RightNavbar from "../components/layout-component/RightNavbar";
 import Navbar from "../components/Navbar";
+import Footer from "../components/pages/Footer";
 
 const HomeLayout = () => {
     return (
@@ -32,6 +33,7 @@ const HomeLayout = () => {
                     <RightNavbar></RightNavbar>
                 </aside>
             </main>
+            <Footer></Footer>
         </div>
     );
 };
